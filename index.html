@@ -1,0 +1,49 @@
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Datos Para Tabla</title>
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <div id="contenedorPrincipal">
+            <div id="formulario">
+                <legend>Datos</legend>
+                <ul id="listaDeVariables">
+                    <li>
+                        <label>Capital: </label><input type="text" id="capitalInput" name="capital">
+                    </li>
+                    <li>
+                        <label>Tasa: </label><input type="text" id="tasaInput" name="tasa">
+                    </li>
+                    <li>
+                        <label>Tiempo: </label><input type="text" id="tiempoInput" name="tiempo">
+                    </li>
+                    <li>
+                        <label>Periodo: </label>
+                        <select id="periodoSelect" name="periodo">
+                            <option value="0.25">semanal</option>
+                            <option value="0.5">quincenal</option>
+                            <option value="1">mensual</option>
+                            <option value="2">bimensual</option>
+                            <option vlaue="3">trimestral</option>
+                            <option value="4">cuatrimestral</option>
+                            <option value="6">semestral</option>
+                            <option value="12">anual</option>
+                        </select>
+                    </li>
+                    <li id="liBoton">
+                        <button>Enviar</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <nav id="navContenedorTablaDeAmortizacion"><label>Tabla de Amortización</label></nav>
+        <div id="contenedorTablaDeAmortizacion">
+            <div id="tabla_de_amortizacion"></div>
+        </div>
+        <script src='./javascript/tabla.js'></script>
+        <script src="./javascript/script.js"></script>
+
+    </body>
+</html>
