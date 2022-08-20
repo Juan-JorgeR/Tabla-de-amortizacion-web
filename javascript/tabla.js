@@ -1,12 +1,12 @@
 var tablaDeAmortizacion=document.querySelector('#tabla_de_amortizacion');
-var tabla=document.createElement('table');
+var tabla;
 
 var capital=document.querySelector('#capitalInput');
 var tasa=document.querySelector('#tasaInput');
 var tiempo=document.querySelector('#tiempoInput');
 var periodo=document.querySelector('#periodoSelect');
 
-var p=0;
+var p;
 var interes,cuota;
 let amortizacion;
 var capitalPendiente;
@@ -17,14 +17,21 @@ var header;
 var cell;
 var texto;
 
+var t;
 function run() {
+    p=0;
+    tabla=document.createElement('table');
+    t=document.getElementById('tablaDeAmortizacion');
     amortizacion=parseFloat(capital.value)/(parseFloat(tiempo.value)*(12/parseFloat(periodo.value)));
-    console.log(amortizacion);
     capitalPendiente=parseFloat(capital.value);
+    if(t!=null)
+        tablaDeAmortizacion.removeChild(t);
     crearCampos();
-    for(var i=0;i<=(12/parseInt(periodo.value))*tiempo.value;i++)
+    for(var i=0;i<=(12/parseFloat(periodo.value))*parseFloat(tiempo.value);i++)
         crearRegistros();
+
     crearTabla();
+
 }
 
 
@@ -66,6 +73,7 @@ function crearRegistros() {
 
 function crearCampos() {
     fila=document.createElement('tr');
+    fila.setAttribute('id','campos');
     header=document.createElement('th');
     for(var i=0;i<5;i++) {
         if(i==0) {
@@ -94,6 +102,8 @@ function crearCampos() {
 
 function crearTabla() {
     tabla.setAttribute('class','tabla');
+    tabla.setAttribute('id','tablaDeAmortizacion');
     tablaDeAmortizacion.appendChild(tabla);
+
 }
 

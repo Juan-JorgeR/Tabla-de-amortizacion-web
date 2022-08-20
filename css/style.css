@@ -11,6 +11,8 @@ body {
     border-radius: 10px;
     background-color: brown;
     color: aliceblue;
+    width: 350px;
+    box-shadow: 0px 21px 46px -15px rgba(0, 0, 0, 1);
 }
 #formulario legend{
     margin: 20px 0 70px 0;
@@ -18,9 +20,20 @@ body {
 #listaDeVariables li{
     list-style: none;
     margin: 20px 0;
+    width: 250px;
+}
+#listaDeVariables li input{
+    float:right;
+}
+#listaDeVariables li select{
+    float:right;
 }
 #liBoton {
     float: right;
+}
+#result {
+    box-shadow: 0px 21px 46px -15px rgba(0, 0, 0, 1);
+    border: solid 1px black;
 }
 #contenedorTablaDeAmortizacion {
     display: flex;
@@ -41,13 +54,24 @@ body {
 #tabla_de_amortizacion {
     margin: 0 auto;
 }
-.tabla td {
-    padding: 0.5em 2em;
+.tabla {
+    background-color: black;
+}
+#campos td{
     background-color: brown;
     color: aliceblue;
 }
-.tabla tr:nth-child(even) td {
+.tabla td{
+    padding: 0.5em 2em;
+    color: aliceblue;
+}
+.tabla tr:nth-child(odd) td {
     background-color: darkgrey;
+    color: black;
+
+}
+.tabla tr:nth-child(even) td {
+    background-color: rgb(249, 244, 244);
     color: black;
 
 }
